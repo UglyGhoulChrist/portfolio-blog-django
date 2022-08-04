@@ -1,23 +1,25 @@
 {% extends 'JohnWebSite/index.html' %}
 {% load static %}
 {% block section %}
-<section class="hi">
-	<div class="hi__content">
-		<h1 class="hi__h1 h1">Привет, я Джон, Креативный технолог</h1>
-		<div class="hi__text text">Они очень мягкие и не оставляют боли. Ему нравится заботиться о своей семье.
-			Упражнение принесет свои плоды.</div>
-		<a href="#" class="hi__btn btn">
-			<div class="btn__text">Скачать резюме</div>
-			<div class="btn__waves"></div>
-		</a>
-	</div>
-	<div class="hi__avatar">
-		<picture>
-			<source srcset="img/avatar.webp" type="image/webp"><img class="hi__img" src="img/avatar.webp" alt="avatar">
-		</picture>
-	</div>
-</section>
-
+<div class="__container">
+	<section class="hi">
+		<div class="hi__content">
+			<h1 class="hi__h1 h1">Привет, я Джон, Креативный технолог</h1>
+			<div class="hi__text text">Они очень мягкие и не оставляют боли. Ему нравится заботиться о своей семье.
+				Упражнение принесет свои плоды.</div>
+			<a href="#" class="hi__btn btn">
+				<div class="btn__text">Скачать резюме</div>
+				<div class="btn__waves"></div>
+			</a>
+		</div>
+		<div class="hi__avatar">
+			<picture>
+				<source srcset="{% static 'JohnWebSite/img/avatar.webp'%}" type="image/webp"><img class="hi__img"
+					src="{% static 'JohnWebSite/img/avatar.webp'%}" alt="avatar">
+			</picture>
+		</div>
+	</section>
+</div>
 <section class="recent-blogs">
 	<div class="__container">
 		<div class="recent-blogs__header">
@@ -26,123 +28,27 @@
 		</div>
 		<ul class="recent-blogs__list">
 			<li class="recent-blogs__item">
-				<article class="blog">
-					<a href="/blogs.html" class="blog__link">
-						<h2 class="blog__h2 h2">Создание дизайн-системы с нуля</h2>
-					</a>
-					<div class="blog__info">
-						<div class="blog__info-data">12 Feb 2020</div>
-						<div class="blog__info-separator">|</div>
-						<div class="blog__info-category">Дизайн, узор</div>
-					</div>
-					<div class="blog__text text">Далеко-далеко за словесными горами в стране гласных и согласных
-						живут, рыбные тексты. Ему текстами большой что. Одна толку встретил дорогу даль дал раз рот
-						рыбного
-						текста имени маленький, lorem послушавшись все ты.
-					</div>
-				</article>
+				{% include 'JohnWebSite/blog.html' %}
 			</li>
 			<li class="recent-blogs__item">
-				<article class="blog">
-					<a href="/blogs.html" class="blog__link">
-						<h2 class="blog__h2 h2">Создание дизайн-системы с нуля</h2>
-					</a>
-					<div class="blog__info">
-						<div class="blog__info-data">12 Feb 2020</div>
-						<div class="blog__info-separator">|</div>
-						<div class="blog__info-category">Дизайн, узор</div>
-					</div>
-					<div class="blog__text text">Далеко-далеко за словесными горами в стране гласных и согласных
-						живут, рыбные тексты. Ему текстами большой что. Одна толку встретил дорогу даль дал раз рот
-						рыбного
-						текста имени маленький, lorem послушавшись все ты.
-					</div>
-				</article>
+				{% include 'JohnWebSite/blog.html' %}
 			</li>
+
 		</ul>
 	</div>
 </section>
-
-
-
 <div class="__container">
 	<section class="featured-works">
 		<div class="featured-works__title">Избранные работы</div>
 		<ul class="featured-works__list">
 			<li class="featured-works__item">
-				<article class="work">
-					<div>
-						<div class="work__picture">
-							<picture>
-								<source srcset="img/rectangle1.webp" type="image/webp"><img class="work__img"
-									src="img/rectangle1.jpg" alt="featured-wor">
-							</picture>
-						</div>
-					</div>
-					<div class="work__content">
-						<a href="#" class="work__link">
-							<h2 class="work__h2 h2">Проектирование панелей</h2>
-						</a>
-						<div class="work__info">
-							<div class="work__info-data">2020</div>
-							<div class="work__info-title">Приборная доска</div>
-						</div>
-						<div class="work__text text">Далеко-далеко за словесными горами в стране гласных и
-							согласных живут рыбные тексты. Приставка собрал безорфографичный имеет! Рыбного родного
-							безорфографичный парадигматическая алфавит единственное?
-						</div>
-					</div>
-				</article>
+				{% include 'JohnWebSite/work.html' %}
 			</li>
 			<li class="featured-works__item">
-				<article class="work">
-					<div>
-						<div class="work__picture">
-							<picture>
-								<source srcset="img/rectangle1.webp" type="image/webp"><img class="work__img"
-									src="img/rectangle1.jpg" alt="featured-wor">
-							</picture>
-						</div>
-					</div>
-					<div class="work__content">
-						<a href="#" class="work__link">
-							<h2 class="work__h2 h2">Проектирование панелей</h2>
-						</a>
-						<div class="work__info">
-							<div class="work__info-data">2020</div>
-							<div class="work__info-title">Приборная доска</div>
-						</div>
-						<div class="work__text text">Далеко-далеко за словесными горами в стране гласных и
-							согласных живут рыбные тексты. Приставка собрал безорфографичный имеет! Рыбного родного
-							безорфографичный парадигматическая алфавит единственное?
-						</div>
-					</div>
-				</article>
+				{% include 'JohnWebSite/work.html' %}
 			</li>
 			<li class="featured-works__item">
-				<article class="work">
-					<div>
-						<div class="work__picture">
-							<picture>
-								<source srcset="img/rectangle1.webp" type="image/webp"><img class="work__img"
-									src="img/rectangle1.jpg" alt="featured-wor">
-							</picture>
-						</div>
-					</div>
-					<div class="work__content">
-						<a href="#" class="work__link">
-							<h2 class="work__h2 h2">Проектирование панелей</h2>
-						</a>
-						<div class="work__info">
-							<div class="work__info-data">2020</div>
-							<div class="work__info-title">Приборная доска</div>
-						</div>
-						<div class="work__text text">Далеко-далеко за словесными горами в стране гласных и
-							согласных живут рыбные тексты. Приставка собрал безорфографичный имеет! Рыбного родного
-							безорфографичный парадигматическая алфавит единственное?
-						</div>
-					</div>
-				</article>
+				{% include 'JohnWebSite/work.html' %}
 			</li>
 		</ul>
 	</section>

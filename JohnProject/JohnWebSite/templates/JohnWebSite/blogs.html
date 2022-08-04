@@ -1,23 +1,13 @@
 {% extends 'JohnWebSite/index.html' %}
 {% load static %}
 {% block section %}
+
 <div class="page__container">
 	<section class="blogs">
 		<h1 class="blogs__h1 h1">Блог</h1>
-		<article class="blog">
-			<a href="/blogs.html" class="blog__link">
-				<h2 class="blog__h2 h2">Создание дизайн-системы с нуля</h2>
-			</a>
-			<div class="blog__info">
-				<div class="blog__info-data">12 Feb 2020</div>
-				<div class="blog__info-separator">|</div>
-				<div class="blog__info-category">Дизайн, узор</div>
-			</div>
-			<div class="blog__text text">Далеко-далеко за словесными горами в стране гласных и согласных
-				живут, рыбные тексты. Ему текстами большой что. Одна толку встретил дорогу даль дал раз рот рыбного
-				текста имени маленький, lorem послушавшись все ты.
-			</div>
-		</article>
+		{% include 'JohnWebSite/blog.html' %}
+		{% include 'JohnWebSite/blog.html' %}
+		{% include 'JohnWebSite/blog.html' %}
 	</section>
 </div>
 
