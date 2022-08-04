@@ -1,4 +1,10 @@
 from django.shortcuts import render
 
-def index(request):
-    return render(request, 'JohnWebSite/index.html')
+def home(request):
+    return render(request, 'JohnWebSite/home.html')
+
+def blogs(request):
+    return render(request, 'JohnWebSite/blogs.html')
+
+def works(request):
+    return render(request, 'JohnWebSite/works.html')

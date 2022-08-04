@@ -1,12 +1,84 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
+    <title>Главная</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <!-- <style>
+        body {
+            opacity: 0;
+        }
+    </style> -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="address" content="">
+    <link rel="stylesheet" href="{% static 'JohnWebSite/css/style.css'%}">
+    <link rel="shortcut icon" href="{% static 'JohnWebSite/img/favicon.ico'%}" type="image/x-icon">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
+
 <body>
-    <h1>hhhhhhhhhhh6666666666666666666hhhhhhhhhhhhhhhh</h1>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="{% url 'home' %}" class="menu__link">Главная</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="{% url 'blogs' %}" class="menu__link">Блог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="{% url 'works' %}" class="menu__link">Работы</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="page">
+            {% block section %}{% endblock %}
+        </main>
+        <footer class="footer __container">
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a href="https://wa.me/7910*******" target="_blank" class="footer__link">
+                        <div class="footer__icon">
+                            <img src="{% static 'JohnWebSite/img/WhatsApp.svg'%}" alt="WhatsApp" class="footer__img">
+                        </div>
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="viber://chat?number=7910*******" rel="nofollow" target="_blank" class="footer__link">
+                        <div class="footer__icon">
+                            <img src="{% static 'JohnWebSite/img/Viber.svg'%}" alt="Viber" class="footer__img">
+                        </div>
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="https://t.me/UglyGhou*******" target="_blank" class="footer__link">
+                        <div class="footer__icon">
+                            <img src="{% static 'JohnWebSite/img/Telegram.svg'%}" alt="Telegram" class="footer__img">
+                        </div>
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="http://vk.com/id70*******" target="_blank" class="footer__link">
+                        <div class="footer__icon">
+                            <img src="{% static 'JohnWebSite/img/VK.svg'%}" alt="VK" class="footer__img">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+    <script src="{% static 'JohnWebSite/js/script.js'%}"></script>
 </body>
+
 </html>
