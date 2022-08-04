@@ -213,10 +213,6 @@ h6 {
      -moz-column-gap: 25px;
           column-gap: 25px;
 }
-.footer__link {
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
 .footer__icon {
   width: 48px;
   height: 48px;

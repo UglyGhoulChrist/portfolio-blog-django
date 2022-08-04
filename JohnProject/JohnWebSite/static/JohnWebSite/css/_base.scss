@@ -83,7 +83,6 @@
     }
 
     &__link {
-        transition: all 0.3s ease 0s;
     }
 
     &__icon {
@@ -96,7 +95,7 @@
         background: #000;
         border: 3px solid transparent;
         border-radius: 5px;
-        transition: all 0.3s ease 0s;
+        transition: all .3s ease 0s;
 
         &:hover {
             border-color: #FF6464;
