@@ -1,24 +1,47 @@
 {% extends 'JohnWebSite/index.html' %}
 {% load static %}
 {% block section %}
-<div class="__container">
-	<section class="hi">
-		<div class="hi__content">
-			<h1 class="hi__h1 h1">Привет, я Джон, Креативный технолог</h1>
-			<div class="hi__text text">Они очень мягкие и не оставляют боли. Ему нравится заботиться о своей семье.
-				Упражнение принесет свои плоды.</div>
-			<a href="#" class="hi__btn btn">
-				<div class="btn__text">Скачать резюме</div>
-				<div class="btn__waves"></div>
-			</a>
-		</div>
-		<div class="hi__avatar">
-			<picture>
-				<source srcset="{% static 'JohnWebSite/img/avatar.webp'%}" type="image/webp"><img class="hi__img"
-					src="{% static 'JohnWebSite/img/avatar.webp'%}" alt="avatar">
-			</picture>
-		</div>
-	</section>
+<div class="first">
+	<div class="__container">
+		<section class="hi">
+			<div class="hi__content">
+				{% if extUser.helloExtUser %}
+				<h1 class="hi__h1 h1">{{extUser.helloExtUser}}</h1>
+				{% else %}
+				<h1 class="hi__h1 h1">Hello, my name John</h1>
+				{% endif %}
+				{% if extUser.descriptionExtUser %}
+				<div class="hi__text text">{{extUser.descriptionExtUser}}</div>
+				{% else %}
+				<div class="hi__text text">I Am Developer</div>
+				{% endif %}
+				{% if extUser.resumeExtUser %}
+				<a href="{{extUser.resumeExtUser.url}}" download="" class="hi__btn btn">
+					<div class="btn__text">Скачать резюме</div>
+					<div class="btn__waves"></div>
+				</a>
+				{% else %}
+				<button class="hi__btn btn">
+					<div class="btn__text">Резюме нет</div>
+					<div class="btn__waves"></div>
+				</button>
+				{% endif %}
+			</div>
+			<div class="hi__avatar">
+				{% if extUser.pictureExtUser %}
+				<picture>
+					<source srcset="{{extUser.pictureExtUser.url}}" type="image/webp"><img class="hi__img"
+						src="{{extUser.pictureExtUser.url}}" alt="avatar">
+				</picture>
+				{% else %}
+				<picture>
+					<source srcset="https://picsum.photos/200" type="image/webp">
+					<img class="hi__img" src="https://picsum.photos/200" alt="avatar">
+				</picture>
+				{% endif %}
+			</div>
+		</section>
+	</div>
 </div>
 <section class="recent-blogs">
 	<div class="__container">
