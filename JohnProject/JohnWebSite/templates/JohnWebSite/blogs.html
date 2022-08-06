@@ -5,9 +5,13 @@
 <div class="page__container">
 	<section class="blogs">
 		<h1 class="blogs__h1 h1">Блог</h1>
+		{% if blogs %}
+		{% for blog in blogs %}
 		{% include 'JohnWebSite/blog.html' %}
-		{% include 'JohnWebSite/blog.html' %}
-		{% include 'JohnWebSite/blog.html' %}
+		{% endfor %}
+		{% else %}
+		<h2 class="blog__h2 h2">Пока блогов нет</h2>
+		{% endif %}
 	</section>
 </div>
 
