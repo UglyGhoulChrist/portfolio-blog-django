@@ -1,11 +1,11 @@
 {% load static %}
 
 <article class="blog">
-    <a href="/blogs.html" class="blog__link">
+    <a href="{% url 'blogs' %}" class="blog__link">
         <h2 class="blog__h2 h2">{{blog.titleBlog}}</h2>
     </a>
     <div class="blog__info">
-        <div class="blog__info-data">{{blog.createdBlog}}</div>
+        <div class="blog__info-data">{{blog.createdBlog|date:"d.m.Y"}}</div>
         <div class="blog__info-separator">|</div>
         <div class="blog__info-category">{{blog.subtitleBlog}}</div>
     </div>

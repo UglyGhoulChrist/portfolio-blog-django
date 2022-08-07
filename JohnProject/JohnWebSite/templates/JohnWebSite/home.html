@@ -43,22 +43,23 @@
 		</section>
 	</div>
 </div>
+{% if blogs %}
 <section class="recent-blogs">
 	<div class="__container">
 		<div class="recent-blogs__header">
-			<div class="recent-blogs__title">Недавние посты</div>
-			<a href="/blogs.html" class="recent-blogs__view-all">Посмотреть все</a>
+			<div class="recent-blogs__title">Недавние</div>
+			<a href="{% url 'blogs' %}" class="recent-blogs__view-all">Посмотреть все</a>
 		</div>
 		<ul class="recent-blogs__list">
-			<li class="recent-blogs__item">
+			{% for blog in blogs %}
+			<li>
 				{% include 'JohnWebSite/blog.html' %}
 			</li>
-			<li class="recent-blogs__item">
-				{% include 'JohnWebSite/blog.html' %}
-			</li>
+			{% endfor %}
 		</ul>
 	</div>
 </section>
+{% endif %}
 <div class="__container">
 	<section class="featured-works">
 		<div class="featured-works__title">Избранные работы</div>

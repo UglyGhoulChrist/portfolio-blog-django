@@ -7,11 +7,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <style>
-        body {
-            opacity: 0;
-        }
-    </style>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -23,15 +18,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body style="opacity: 0;">
     <div class="wrapper">
         <header class="header">
             <div class="header__container">
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__item">
-                            <!-- <a href="{% url 'home' %}" class="menu__link"
-                                style="{% if link == 1 %} color: red; {% endif %}">Главная</a> -->
                             {% if link == 1 %}
                             <a href="{% url 'home' %}" class="menu__link _active">Главная</a>
                             {% else %}
@@ -44,8 +37,6 @@
                             {% else %}
                             <a href="{% url 'blogs' %}" class="menu__link">Блог</a>
                             {% endif %}
-                            <!-- <a href="{% url 'blogs' %}" class="menu__link"
-                                style="{% if link == 2 %} color: red; {% endif %}">Блог</a> -->
                         </li>
                         <li class="menu__item">
                             {% if link == 3 %}
@@ -53,8 +44,6 @@
                             {% else %}
                             <a href="{% url 'works' %}" class="menu__link">Работы</a>
                             {% endif %}
-                            <!-- <a href="{% url 'works' %}" class="menu__link"
-                                style="{% if link == 3 %} color: red; {% endif %}">Работы</a> -->
                         </li>
                     </ul>
                 </nav>
