@@ -41,6 +41,7 @@ class Blog(models.Model):
     class Meta:
         verbose_name = 'Блог'
         verbose_name_plural = 'Блоги'
+        ordering = ['-createdBlog']
 
     titleBlog = models.CharField(verbose_name='Название блога', max_length=100)
     subtitleBlog = models.CharField(verbose_name='Краткое описание (категория?)', max_length=100)
