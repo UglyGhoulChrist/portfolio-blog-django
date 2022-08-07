@@ -67,15 +67,16 @@
 			<div class="featured-works__title">Недавние проекты</div>
 			<a href="{% url 'works' %}" class="featured-works__view-all">Посмотреть все</a>
 		</div>
-		<div style="color: red;">TODO Сделать нормальный слайдер</div>
-		<ul class="featured-works__list">
+		<div class="featured-works__list single-item">
 			{% for project in projects %}
-			<li class="featured-works__item">
+			<div class="featured-works__item">
 				{% include 'JohnWebSite/work.html' %}
-			</li>
+			</div>
 			{% endfor %}
-		</ul>
+		</div>
 	</div>
 </section>
 {% endif %}
 {% endblock %}
+
+
