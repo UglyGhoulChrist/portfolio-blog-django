@@ -2,23 +2,27 @@
 <article class="work">
     <div>
         <div class="work__picture">
+            {% if project.pictureProject %}
             <picture>
-                <source srcset="{% static 'JohnWebSite/img/project.jpg'%}" type="image/webp">
-                <img class="work__img" src="{% static 'JohnWebSite/img/project.jpg'%}" alt="featured-wor">
+                <source srcset="{{project.pictureProject.url}}" type="image/webp">
+                <img class="work__img" src="{{project.pictureProject.url}}" alt="featured-work">
             </picture>
+            {% else %}
+            <picture>
+                <source srcset="https://picsum.photos/200" type="image/webp">
+                <img class="work__img" src="https://picsum.photos/200" alt="avatar">
+            </picture>
+            {% endif %}
         </div>
     </div>
     <div class="work__content">
-        <a href="#" class="work__link">
-            <h2 class="work__h2 h2">Проектирование панелей</h2>
+        <a href="{% url 'works' %}" class="work__link">
+            <h2 class="work__h2 h2">{{project.titleProject}}</h2>
         </a>
         <div class="work__info">
-            <div class="work__info-data">2020</div>
-            <div class="work__info-title">Приборная доска</div>
+            <div class="work__info-data">{{project.createdProject|date:"Y"}}</div>
+            <div class="work__info-title">{{project.subtitleProject}}</div>
         </div>
-        <div class="work__text text">Далеко-далеко за словесными горами в стране гласных и
-            согласных живут рыбные тексты. Приставка собрал безорфографичный имеет! Рыбного родного
-            безорфографичный парадигматическая алфавит единственное?
-        </div>
+        <div class="work__text text">{{project.descriptionProject}}</div>
     </div>
 </article>

@@ -59,6 +59,7 @@ class Project(models.Model):
     class Meta:
         verbose_name = 'Проект'
         verbose_name_plural = 'Проекты'
+        ordering = ['-createdProject']
 
     titleProject = models.CharField(verbose_name='Название проекта', max_length=100)
     subtitleProject = models.CharField(verbose_name='Краткое описание(категория?)', max_length=100)

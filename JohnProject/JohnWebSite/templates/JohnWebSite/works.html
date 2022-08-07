@@ -4,10 +4,14 @@
 
 <div class="page__container">
 	<section class="works">
-		<h1 class="works__h1 h1">Работы</h1>
+		<h1 class="works__h1 h1">Проекты</h1>
+		{% if projects %}
+		{% for project in projects %}
 		{% include 'JohnWebSite/work.html' %}
-		{% include 'JohnWebSite/work.html' %}
-		{% include 'JohnWebSite/work.html' %}
+		{% endfor %}
+		{% else %}
+		<h2 class="works__h2 h2">Пока проектов нет</h2>
+		{% endif %}
 	</section>
 </div>
 

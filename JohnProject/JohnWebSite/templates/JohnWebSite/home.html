@@ -47,7 +47,7 @@
 <section class="recent-blogs">
 	<div class="__container">
 		<div class="recent-blogs__header">
-			<div class="recent-blogs__title">Недавние</div>
+			<div class="recent-blogs__title">Недавние блоги</div>
 			<a href="{% url 'blogs' %}" class="recent-blogs__view-all">Посмотреть все</a>
 		</div>
 		<ul class="recent-blogs__list">
@@ -60,20 +60,22 @@
 	</div>
 </section>
 {% endif %}
-<div class="__container">
-	<section class="featured-works">
-		<div class="featured-works__title">Избранные работы</div>
+{% if projects %}
+<section class="featured-works">
+	<div class="__container">
+		<div class="featured-works__header">
+			<div class="featured-works__title">Недавние проекты</div>
+			<a href="{% url 'works' %}" class="featured-works__view-all">Посмотреть все</a>
+		</div>
+		<div style="color: red;">TODO Сделать нормальный слайдер</div>
 		<ul class="featured-works__list">
+			{% for project in projects %}
 			<li class="featured-works__item">
 				{% include 'JohnWebSite/work.html' %}
 			</li>
-			<li class="featured-works__item">
-				{% include 'JohnWebSite/work.html' %}
-			</li>
-			<li class="featured-works__item">
-				{% include 'JohnWebSite/work.html' %}
-			</li>
+			{% endfor %}
 		</ul>
-	</section>
-</div>
+	</div>
+</section>
+{% endif %}
 {% endblock %}
