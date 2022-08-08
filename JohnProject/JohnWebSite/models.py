@@ -67,7 +67,7 @@ class Project(models.Model):
     createdProject = models.DateTimeField(verbose_name='Создан', auto_now_add=True)
     pictureProject = models.FileField(verbose_name='Картинка проекта', upload_to='JohnWebSite/img', null=True,
                                       blank=True)
-    linkProject = models.SlugField(max_length=255, unique=True, verbose_name='Адрес проекта в интернете')
+    linkProject = models.URLField(max_length=255, unique=True, verbose_name='Адрес проекта в интернете')
 
     def __str__(self):
         return f'{self.titleProject} {self.linkProject}'

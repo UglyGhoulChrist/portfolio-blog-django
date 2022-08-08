@@ -16,8 +16,8 @@
         </div>
     </div>
     <div class="work__content">
-        <a href="{% url 'works' %}" class="work__link">
-            <h2 class="work__h2 h2">{{project.titleProject}}</h2>
+        <a href="{{project.linkProject}}" target="_blank" class="work__link">
+            <h2 class="work__h2 h2" title="Перейти к проекту">{{project.titleProject}}</h2>
         </a>
         <div class="work__info">
             <div class="work__info-data">{{project.createdProject|date:"Y"}}</div>

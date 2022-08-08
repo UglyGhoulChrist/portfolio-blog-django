@@ -3,7 +3,13 @@
 <html lang="ru">
 
 <head>
+    {% if link == 1 %}
     <title>Главная</title>
+    {% elif link == 2 %}
+    <title>Блог</title>
+    {% elif link == 3 %}
+    <title>Проекты</title>
+    {% endif %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
@@ -12,10 +18,8 @@
     <meta name="author" content="">
     <meta name="copyright" content="">
     <meta name="address" content="">
+    <!-- Подключение моих стилей и слайдера -->
     <link rel="stylesheet" href="{% static 'JohnWebSite/css/style.css'%}">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'JohnWebSite/css/slick.css'%}" /> 
-    <link rel="stylesheet" type="text/css" href="{% static 'JohnWebSite/css/slick-theme.css'%}" />-->
     <link rel="shortcut icon" href="{% static 'JohnWebSite/img/favicon.ico'%}" type="image/x-icon">
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,11 +96,13 @@
             </div>
         </footer>
     </div>
+    <!-- Подключение показа страницы после загрузки -->
     <script src="{% static 'JohnWebSite/js/script.js'%}"></script>
+    <!-- Подключение jquery -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="{% static 'JohnWebSite/js/slick.min.js'%}"></script> -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Подключение слайдера -->
+    <script type="text/javascript" src="{% static 'JohnWebSite/js/slick.min.js'%}"></script>
+    <!-- Инициализация слайдера -->
     <script type="text/javascript" src="{% static 'JohnWebSite/js/ini.js'%}"></script>
 
 </body>

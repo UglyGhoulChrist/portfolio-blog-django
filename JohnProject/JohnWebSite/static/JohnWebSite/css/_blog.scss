@@ -4,6 +4,7 @@
     flex-direction: column;
     row-gap: 15px;
     position: relative;
+    align-items: flex-start;
 
     &::after {
         position: absolute;
@@ -22,6 +23,9 @@
     }
 
     &__link {
+        margin-left: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
         // Выключаем на этой странице ссылку
         pointer-events: none;
         cursor: default;

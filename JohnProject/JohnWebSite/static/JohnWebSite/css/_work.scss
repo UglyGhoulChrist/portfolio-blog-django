@@ -50,15 +50,17 @@
         display: grid;
         align-content: flex-start;
         row-gap: 20px;
+        justify-items: start;
     }
 
     &__link {
-        pointer-events: none;
-        cursor: default;
     }
 
     &__h2 {
         margin-top: -10px;
+        margin-left: -10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     &__info {
