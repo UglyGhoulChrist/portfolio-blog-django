@@ -61,38 +61,21 @@
         </main>
         <footer class="footer">
             <div class="footer__container">
+                {% if socials %}
                 <ul class="footer__list">
+                    {% for social in socials %}
                     <li class="footer__item">
-                        <a href="https://wa.me/7910*******" target="_blank" class="footer__link">
+                        <a href="{{social.linkSocial}}" target="_blank" class="footer__link">
                             <div class="footer__icon">
-                                <img src="{% static 'JohnWebSite/img/WhatsApp.svg'%}" alt="WhatsApp"
-                                    class="footer__img">
+                                <img src="{{social.pictureSocial.url}}" alt="{{social.titleSocial}}" class="footer__img">
                             </div>
                         </a>
                     </li>
-                    <li class="footer__item">
-                        <a href="viber://chat?number=7910*******" rel="nofollow" target="_blank" class="footer__link">
-                            <div class="footer__icon">
-                                <img src="{% static 'JohnWebSite/img/Viber.svg'%}" alt="Viber" class="footer__img">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="https://t.me/UglyGhou*******" target="_blank" class="footer__link">
-                            <div class="footer__icon">
-                                <img src="{% static 'JohnWebSite/img/Telegram.svg'%}" alt="Telegram"
-                                    class="footer__img">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="http://vk.com/id70*******" target="_blank" class="footer__link">
-                            <div class="footer__icon">
-                                <img src="{% static 'JohnWebSite/img/VK.svg'%}" alt="VK" class="footer__img">
-                            </div>
-                        </a>
-                    </li>
+                    {% endfor %}
                 </ul>
+                {% else %}
+                <h1 class="hi__h1 h1">Social NOT</h1>
+                {% endif %}
             </div>
         </footer>
     </div>
