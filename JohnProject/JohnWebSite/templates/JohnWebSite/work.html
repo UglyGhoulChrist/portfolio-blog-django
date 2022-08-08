@@ -5,12 +5,12 @@
             {% if project.pictureProject %}
             <picture>
                 <source srcset="{{project.pictureProject.url}}" type="image/webp">
-                <img class="work__img" src="{{project.pictureProject.url}}" alt="featured-work">
+                <img class="work__img" src="{{project.pictureProject.url}}" alt="{{project.titleProject}}">
             </picture>
             {% else %}
             <picture>
                 <source srcset="https://picsum.photos/200" type="image/webp">
-                <img class="work__img" src="https://picsum.photos/200" alt="avatar">
+                <img class="work__img" src="https://picsum.photos/200" alt="{{project.titleProject}}">
             </picture>
             {% endif %}
         </div>

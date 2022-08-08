@@ -7,10 +7,10 @@ class ExtUser(models.Model):
 
     class Meta:
         verbose_name = 'Юзер'
-        verbose_name_plural = 'Юзеры'
+        verbose_name_plural = 'Юзер'
 
     helloExtUser = models.CharField(verbose_name='Приветствие на первом экране', max_length=255)
-    descriptionExtUser = models.CharField(verbose_name='Описание на первом экране', max_length=255)
+    descriptionExtUser = models.TextField(verbose_name='Описание на первом экране', max_length=1000)
     pictureExtUser = models.FileField(verbose_name='Картинка на первом экране', upload_to='JohnWebSite/img', null=True,
                                       blank=True)
     resumeExtUser = models.FileField(verbose_name='Файл резюме', upload_to='JohnWebSite/resume', null=True, blank=True)
@@ -27,10 +27,9 @@ class Social(models.Model):
         verbose_name = 'Социальная сеть'
         verbose_name_plural = 'Социальные сети'
 
-    titleSocial = models.CharField(verbose_name='Название социальной сети', max_length=255)
-    pictureSocial = models.FileField(verbose_name='Картинка социальной сети', upload_to='JohnWebSite/img', null=True,
-                                     blank=True)
-    linkSocial = models.SlugField(max_length=255, unique=True)
+    titleSocial = models.CharField(verbose_name='Название социальной сети', max_length=100)
+    pictureSocial = models.FileField(verbose_name='Картинка социальной сети', upload_to='JohnWebSite/img')
+    linkSocial = models.URLField(max_length=255, unique=True)
 
     def __str__(self):
         return self.titleSocial
