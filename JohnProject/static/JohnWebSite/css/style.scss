@@ -1,0 +1,25 @@
+// Подключение обнуления + wrapper + __container
+@import 'null';
+
+// Подключение общих стилей страницы, шапки с навигацией, заголовков, текста, футера. 
+// Соответствует странице index.html ???
+@import 'base';
+
+// Подключение шрифта 
+// TODO проверить жирность!!!
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900&display=swap);
+
+// Подключение отличающихся стилей страницы home.html
+@import 'home';
+
+// Подключение отличающихся стилей страницы blogs.html
+@import 'blogs';
+
+// Подключение отличающихся стилей страницы works.html
+@import 'works';
+
+// Подключение слайдера
+@import 'slick';
+
+// Подключение стилей слайдера
+@import 'slick-theme';
