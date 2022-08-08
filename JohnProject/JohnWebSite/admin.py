@@ -14,9 +14,9 @@ class SocialAdmin(admin.ModelAdmin):
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ['titleBlog', 'subtitleBlog', 'activeBlog']
+    list_display = ['titleBlog',  'activeBlog' ,'createdBlog','linkBlog']
 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['titleProject', 'subtitleProject', 'linkProject']    
+    list_display = ['titleProject', 'activeProject','createdProject', 'linkProject']    

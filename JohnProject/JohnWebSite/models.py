@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# User имеет поля приветствие, описание, фотографию, файл резюме
 class ExtUser(models.Model):
     objects = None
 
@@ -19,7 +18,6 @@ class ExtUser(models.Model):
         return self.helloExtUser
 
 
-# Ссылки на социальные сети будет иметь поля название, картинка, ссылка на адрес в интернете
 class Social(models.Model):
     objects = None
 
@@ -29,13 +27,12 @@ class Social(models.Model):
 
     titleSocial = models.CharField(verbose_name='Название социальной сети', max_length=100)
     pictureSocial = models.FileField(verbose_name='Картинка социальной сети', upload_to='JohnWebSite/img')
-    linkSocial = models.URLField(max_length=255, unique=True)
+    linkSocial = models.URLField(verbose_name='Ссылка на социальную сеть', max_length=255, unique=True)
 
     def __str__(self):
         return self.titleSocial
 
 
-# Блог имеет поля Название, Краткое описание(категория?), Подробное описание, создан, изменён, актуальность(опубликован или нет)
 class Blog(models.Model):
     class Meta:
         verbose_name = 'Блог'
@@ -43,17 +40,19 @@ class Blog(models.Model):
         ordering = ['-createdBlog']
 
     titleBlog = models.CharField(verbose_name='Название блога', max_length=100)
-    subtitleBlog = models.CharField(verbose_name='Краткое описание (категория?)', max_length=100)
+    subtitleBlog = models.CharField(verbose_name='Категория? блога', max_length=100)
     descriptionBlog = models.TextField(verbose_name='Описание блога')
-    createdBlog = models.DateTimeField(verbose_name='Создан', auto_now_add=True)
-    changedBlog = models.DateTimeField(verbose_name='Изменён', auto_now=True)
-    activeBlog = models.BooleanField(verbose_name='Опубликован', default=True, null=True)
+    createdBlog = models.DateField(verbose_name='Дата создания', auto_now_add=True)
+    changedBlog = models.DateField(verbose_name='Дата последнего измения', auto_now=True)
+    activeBlog = models.BooleanField(verbose_name='Публикуем?', default=True)
+    pictureBlog = models.FileField(verbose_name='Картинка блога', upload_to='JohnWebSite/img', blank=True)
+    linkBlog = models.URLField(verbose_name='Адрес блога в интернете',max_length=255, blank=True)
+
 
     def __str__(self):
         return f'{self.titleBlog} {self.activeBlog}'
 
 
-# Проект имеет поля Название, Краткое описание(категория?), Подробное описание, создан, Картинка проекта, Адрес проекта в интернете
 class Project(models.Model):
     class Meta:
         verbose_name = 'Проект'
@@ -61,12 +60,12 @@ class Project(models.Model):
         ordering = ['-createdProject']
 
     titleProject = models.CharField(verbose_name='Название проекта', max_length=100)
-    subtitleProject = models.CharField(verbose_name='Краткое описание(категория?)', max_length=100)
+    subtitleProject = models.CharField(verbose_name='Категория? проекта', max_length=100)
     descriptionProject = models.TextField(verbose_name='Описание проекта')
-    createdProject = models.DateTimeField(verbose_name='Создан', auto_now_add=True)
-    pictureProject = models.FileField(verbose_name='Картинка проекта', upload_to='JohnWebSite/img', null=True,
-                                      blank=True)
-    linkProject = models.URLField(max_length=255, unique=True, verbose_name='Адрес проекта в интернете')
+    createdProject = models.DateField(verbose_name='Дата создания', auto_now_add=True)
+    activeProject = models.BooleanField(verbose_name='Публикуем?', default=True)
+    pictureProject = models.FileField(verbose_name='Картинка проекта', upload_to='JohnWebSite/img', blank=True)
+    linkProject = models.URLField( verbose_name='Адрес проекта в интернете', max_length=255, unique=True)
 
     def __str__(self):
         return f'{self.titleProject} {self.linkProject}'
