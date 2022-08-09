@@ -156,6 +156,9 @@
 
         @media (max-width: 29.99875em) {
             justify-content: center;
+/*             добавить */
+            row-gap: 20px;
+            flex-direction: column;
         }
     }
 
@@ -175,9 +178,10 @@
             color: #FF6464;
         }
 
+/*         убрать
         @media (max-width: 29.99875em) {
             display: none;
-        }
+        } */
     }
 
     &__list {
@@ -221,6 +225,8 @@
 
         @media (max-width: 29.99875em) {
             justify-content: center;
+            row-gap: 20px;
+            flex-direction: column;
         }
     }
 
@@ -235,13 +241,13 @@
             color: #FF6464;
         }
 
-        @media (max-width: 29.99875em) {
-            display: none;
-        }
+        // @media (max-width: 29.99875em) {
+        //     display: none;
+        // }
     }
 
     &__title {
-        padding: 18px 0;
+        // padding: 18px 0;
         font-size: 1.375rem;
         color: #21243D;
     }
