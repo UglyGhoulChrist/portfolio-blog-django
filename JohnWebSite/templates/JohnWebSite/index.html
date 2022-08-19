@@ -21,6 +21,14 @@
     <!-- Подключение моих стилей и слайдера -->
     <link rel="stylesheet" href="{% static 'JohnWebSite/css/style.css'%}">
     <link rel="shortcut icon" href="{% static 'JohnWebSite/img/favicon.ico'%}" type="image/x-icon">
+    <!-- Подключение показа страницы после загрузки -->
+    <script defer src="{% static 'JohnWebSite/js/script.js'%}"></script>
+    <!-- Подключение jquery -->
+    <script defer type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- Подключение слайдера -->
+    <script defer type="text/javascript" src="{% static 'JohnWebSite/js/slick.min.js'%}"></script>
+    <!-- Инициализация слайдера -->
+    <script defer type="text/javascript" src="{% static 'JohnWebSite/js/ini.js'%}"></script>
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -67,27 +75,17 @@
                     <li class="footer__item">
                         <a href="{{social.linkSocial}}" target="_blank" class="footer__link">
                             <div class="footer__icon">
-                                <img src="{{social.pictureSocial.url}}" alt="{{social.titleSocial}}" class="footer__img">
+                                <img src="{{social.pictureSocial.url}}" alt="{{social.titleSocial}}"
+                                    class="footer__img">
                             </div>
                         </a>
                     </li>
                     {% endfor %}
                 </ul>
-                {% else %}
-                <h1 class="hi__h1 h1">Social NOT</h1>
                 {% endif %}
             </div>
         </footer>
     </div>
-    <!-- Подключение показа страницы после загрузки -->
-    <script src="{% static 'JohnWebSite/js/script.js'%}"></script>
-    <!-- Подключение jquery -->
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <!-- Подключение слайдера -->
-    <script type="text/javascript" src="{% static 'JohnWebSite/js/slick.min.js'%}"></script>
-    <!-- Инициализация слайдера -->
-    <script type="text/javascript" src="{% static 'JohnWebSite/js/ini.js'%}"></script>
-
 </body>
 
 </html>

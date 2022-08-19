@@ -156,6 +156,8 @@
 
         @media (max-width: 29.99875em) {
             justify-content: center;
+            flex-direction: column;
+            row-gap: 20px;
         }
     }
 
@@ -166,6 +168,7 @@
 
     &__view-all {
         margin-left: -10px;
+        margin-right: -10px;
         padding: 10px;
         font-size: 1.375rem;
         color: #00A8CC;
@@ -173,10 +176,6 @@
 
         &:hover {
             color: #FF6464;
-        }
-
-        @media (max-width: 29.99875em) {
-            display: none;
         }
     }
 
@@ -221,11 +220,14 @@
 
         @media (max-width: 29.99875em) {
             justify-content: center;
+            flex-direction: column;
+            row-gap: 20px;
         }
     }
 
     &__view-all {
         margin-left: -10px;
+        margin-right: -10px;
         padding: 10px;
         font-size: 1.375rem;
         color: #00A8CC;
@@ -234,14 +236,9 @@
         &:hover {
             color: #FF6464;
         }
-
-        @media (max-width: 29.99875em) {
-            display: none;
-        }
     }
 
     &__title {
-        padding: 18px 0;
         font-size: 1.375rem;
         color: #21243D;
     }
