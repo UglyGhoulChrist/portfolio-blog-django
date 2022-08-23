@@ -1,0 +1,33 @@
+// Стили приложения АНЕКДОТЫ
+
+.anekdots {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    // .anekdots_text
+
+    &_copyright {
+        border: 1px solid red;
+        border-radius: 10px;
+        padding: 10px;
+        color: red;
+    }
+
+    &_text {
+    }
+
+    // .anekdots__h1
+
+    &__h1 {
+    }
+
+    // .anekdots__h2
+
+    &__h2 {}
+
+    &__link{
+        color:blue;
+        text-decoration: underline !important;
+    }
+}

@@ -1,0 +1,26 @@
+{% extends 'JohnWebSite/index.html' %}
+{% load static %}
+{% block section %}
+
+<div class="page__container">
+    <section class="anekdots">
+        <div class="anekdots_copyright text"> Проект создан исключительно в учебных целях. Администрация проекта -
+            <span style="color: black;">UglyGhoulChrist@gmail.com</span>. Проект парсит сайт <a class="anekdots__link" href="www.anekdot.ru">www.anekdot.ru</a> и выводит анекдоты. Анекдоты являются
+            произведениями народного творчества. Администрация сайта <a class="anekdots__link" href="www.anekdot.ru">www.anekdot.ru</a> и проекта не ставит перед собой цели
+            оскорблять честь или достоинство физических лиц, а также посягать на деловую репутацию физических или
+            юридических лиц. Сведения, содержащиеся в анекдотах являются вымышленными; совпадения имен и названий -
+            случайными. Все материалы доступны для перепечатки в СМИ только с обязательной ссылкой на источник -
+            <a class="anekdots__link" href="www.anekdot.ru">www.anekdot.ru</a>.
+        </div>
+        <h1 class="anekdots__h1 h1">Свежие анекдоты:</h1>
+        {% if anekdots %}
+        {% for anekdot in anekdots %}
+        <div class="anekdots_text text">* {{anekdot}}</div>
+        {% endfor %}
+        {% else %}
+        <h2 class="anekdots__h2 h2">Анекдоты пока не добавлены.</h2>
+        {% endif %}
+    </section>
+</div>
+
+{% endblock %}

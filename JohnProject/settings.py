@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'JohnWebSite.apps.JohnwebsiteConfig',
+    'anekdot.apps.AnekdotConfig',
 ]
 
 MIDDLEWARE = [
