@@ -857,8 +857,8 @@ body {
   z-index: 100;
   position: absolute;
   display: block;
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   line-height: 0px;
   font-size: 0px;
   cursor: pointer;
@@ -870,12 +870,6 @@ body {
   padding: 0;
   border: none;
   outline: none;
-}
-@media (max-width: 767.8px) {
-  .slick-prev,
-.slick-next {
-    opacity: 0;
-  }
 }
 .slick-prev:hover, .slick-prev:focus,
 .slick-next:hover,
@@ -899,7 +893,7 @@ body {
   font-size: 60px;
   line-height: 1;
   color: #00A8CC;
-  opacity: 0.75;
+  opacity: 0.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -993,5 +987,5 @@ body {
 }
 .slick-dots li.slick-active button:before {
   color: black;
-  opacity: 0.75;
+  opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */
